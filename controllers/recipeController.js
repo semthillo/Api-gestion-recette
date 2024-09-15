@@ -1,5 +1,5 @@
 import db from "../config/db.js";
-import { validationResult } from "express-validator";
+import { body, validationResult } from "express-validator";
 
 export const createRecipe = async (req, res) => {
   const errors = validationResult(req);
@@ -32,6 +32,32 @@ export const getAllRecipes = async (req, res) => {
     res.status(200).json(results);
   } catch (err) {
     console.error("Error listing recipe:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+export const updateRecipe = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { id } = req.params;
+  const { title, ingredient, type } = req.body;
+
+  try {
+    const [results] = await db.query(
+      "UPDATE recipes SET title = ?, ingredient= ?, type = ? WHERE  id = ?",
+      [title, ingredient, type, id]
+    );
+
+    if (results.affectedRows === 0) {
+      return res.status(400).json({ errors: "recipe not found" });
+    }
+
+    res.status(200).json({ message: "recipe has been updated successfully" });
+  } catch (err) {
+    console.error("Error update recipe:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };

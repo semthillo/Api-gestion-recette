@@ -10,7 +10,7 @@ export const createRecipe = async (req, res) => {
     const { title, ingredient, type } = req.body; 
 
     try {
-        const [results] = await db.query('INSERT INTO Recipe (title, ingredient, type) VALUES (?, ?, ?)', [title, ingredient, type]);
+        const [results] = await db.query('INSERT INTO recipes (title, ingredient, type) VALUES (?, ?, ?)', [title, ingredient, type]);
         res.status(200).json({ id: results.insertId });
     } catch (err) {
         console.error('Error inserting recipe:', err);
@@ -24,7 +24,7 @@ export const getAllRecipes = async (req, res) => {
     }
 
     try {
-        const [results] = await db.query('SELECT * FROM recipe')
+        const [results] = await db.query('SELECT * FROM recipes')
         console.table(results );
         res.status(200).json(results);
     } catch (err) {

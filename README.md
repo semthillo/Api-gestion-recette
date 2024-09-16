@@ -6,6 +6,7 @@ Cette API permet de gérer une collection de recettes. Vous pouvez l'utiliser po
 
 - [Node.js](https://nodejs.org/) (version 14 ou supérieure)
 - [MySQL](https://www.mysql.com/) (version 5.7 ou supérieure)
+- [Express.js](https://www.npmjs.com/package/express) (version 4.21 ou supérieure)
 
 ## Installation
 
@@ -125,4 +126,4 @@ Pour démarrer l'application, exécutez la commande suivante :
 
 ## Author
 - **GitHub** : [Ousmane Ly](https://github.com/Ousmanly)
-- **LinkedIn** : [Marieme Dianifaba](https://github.com/mariem2012)
+- **GitHub** : [Mariem Dianifaba](https://github.com/mariem2012)

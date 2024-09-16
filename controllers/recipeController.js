@@ -1,11 +1,24 @@
 import db from "../config/db.js";
-import { validationResult } from "express-validator";
 
-export const createRecipe = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+export const checkRecipe = async (title)=>{
+  try{
+  const [results] = await db.query("SELECT * FROM recipes WHERE title =?",[title]);
+  return results.length
+ }catch(error){
+    throw error;
+    
+ }
+}
+export const checkRecipeById = async (id)=>{
+  try{
+  const [results] = await db.query("SELECT * FROM recipes WHERE id =?",[id]);
+  return results.length
+ }catch(error){
+    throw error;
+    
+ }
+}
+export const createRecipe = async (req, res, next) => {
 
   const { title, ingredient, type } = req.body;
 
@@ -19,12 +32,9 @@ export const createRecipe = async (req, res) => {
     console.error("Error inserting recipe:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
+  next()
 };
-export const getAllRecipes = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+export const getAllRecipes = async (_req, res, next) => {
 
   try {
     const [results] = await db.query("SELECT * FROM recipes");
@@ -34,13 +44,10 @@ export const getAllRecipes = async (req, res) => {
     console.error("Error listing recipe:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
+  next()
 };
 
-export const updateRecipe = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+export const updateRecipe = async (req, res, next) => {
 
   const { id } = req.params;
   const { title, ingredient, type } = req.body;
@@ -50,36 +57,23 @@ export const updateRecipe = async (req, res) => {
       "UPDATE recipes SET title = ?, ingredient= ?, type = ? WHERE  id = ?",
       [title, ingredient, type, id]
     );
-
-    if (results.affectedRows === 0) {
-      return res.status(400).json({ errors: "recipe not found" });
-    }
-
     res.status(200).json({ message: "recipe has been updated successfully" });
   } catch (err) {
     console.error("Error update recipe:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
+  next()
 };
 
-export const destroyRecipe = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
-
+export const destroyRecipe = async (req, res, next) => {
   const { id } = req.params;
 
-  try {
+  try { 
     const [results] = await db.query("DELETE FROM recipes WHERE  id = ?", [id]);
-
-    if (results.affectedRows === 0) {
-      return res.status(400).json({ errors: "recipe not found" });
-    }
-
     res.status(200).json({ message: "recipe has been deleted successfully" });
   } catch (err) {
     console.error("Error delete recipe:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
+  next()
 };

@@ -1,12 +1,12 @@
 
 import express from 'express'
 import bodyParser from 'body-parser'
-import recipeRoutes from './routes/recipeRoutes.js'
+import RecipeRouter from './routes/RecipeRoute.js'
 const app = express()
 
 app.use(bodyParser.json())
 
-app.use('/api', recipeRoutes);
+app.use('/api', RecipeRouter);
 
 const port = 3005
 app.listen(port, () => {

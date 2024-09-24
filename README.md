@@ -128,7 +128,43 @@ Pour démarrer l'application, exécutez la commande suivante :
 
     Vous pouvez importer la collection Postman fournie Recipe_collection.json pour tester facilement tous les endpoints de l'API.
 
+  ## Comment exécuter les tests unitaires
+
+  #### Exécuter les tests
+  - Assurez-vous que votre base de données est en cours d'exécution et que les tables nécessaires sont configurées.
+  - Ensuite, lancez les tests avec la commande suivante :
+
+  ```bash 
+  npm test
+  ```
+
+  ## Construire et lancer le conteneur Docker
+
+### Prérequis
+- Assurez-vous d'avoir Docker et Docker Compose installés sur votre machine.
+
+### Étapes
+
+1. **Créer le fichier `Dockerfile` :**
+   Si ce n'est pas déjà fait, créez un fichier `Dockerfile` à la racine de votre projet avec les instructions nécessaires pour construire l'image de votre application.
+
+2. **Créer le fichier `docker-compose.yml` :**
+   Si vous utilisez Docker Compose, assurez-vous d'avoir un fichier `docker-compose.yml` configuré.
+
+3. **Construire l'image Docker :**
+   À la racine de votre projet, exécutez la commande suivante pour construire l'image Docker :
+   ```bash
+   docker-compose build
+   ```
+
+4. **Lancer le conteneur Docker : Démarrez le conteneur en utilisant la commande :**
+
+  ```bash 
+  docker-compose up
+  ```
+
 ## Author
 
 - **GitHub** : [Ousmane Ly](https://github.com/Ousmanly)
 - **GitHub** : [Mariem Dianifaba](https://github.com/mariem2012)
+- **GitHub** : [Sem Thillo](https://github.com/semthillo)

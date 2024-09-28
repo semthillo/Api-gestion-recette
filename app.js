@@ -6,8 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use('/api', RecipeRouter);
-console.log("samarrchhheeee");
-
+console.log('samarrchhheeee');
 
 const port = 3005;
 app.listen(port, () => {

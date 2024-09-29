@@ -15,7 +15,7 @@ Suivez ces étapes pour configurer le projet sur votre machine locale :
 1. **Clonez le repository :**
 
    ```bash
-       https://github.com/Ousmanly/gestion_recette_api.git
+       https://github.com/Ousmanly/gestion_recette_api_backend.git
    ```
 
 2. **Accédez au dossier du projet :**
@@ -169,5 +169,4 @@ docker-compose up
 ## Author
 
 - **GitHub** : [Ousmane Ly](https://github.com/Ousmanly)
-- **GitHub** : [Mariem Dianifaba](https://github.com/mariem2012)
 - **GitHub** : [Sem Thillo](https://github.com/semthillo)

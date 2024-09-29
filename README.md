@@ -90,7 +90,7 @@ Pour démarrer l'application, exécutez la commande suivante :
 - Reponse :
   ```JSON
       {
-          "id": 1
+        "message": "recipe has been created successfully"
       }
   ```
   **Mettre à jour une recette**

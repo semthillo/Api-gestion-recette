@@ -1,13 +1,11 @@
 import express from 'express';
-// import RecipeController from '../controllers/RecipeController.js';
 import {
   addRequestValidatore,
   deleteRequestValidatore,
   updateRequestValidatore,
 } from '../middlewares/validatorRecipe.js';
-import RecipeController from '../controllers/recipeController.js';
+import RecipeController from '../controllers/RecipeController.js';                                                                                                 
 
-// const app = express()
 const router = express.Router();
 
 router.get('/recipes', RecipeController.getAllRecipes);

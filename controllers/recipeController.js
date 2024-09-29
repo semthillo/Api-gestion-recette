@@ -23,7 +23,7 @@ class RecipeController {
     try {
       const { title, ingredient, type } = req.body;
       await RecipeModel.createRecipes(title, ingredient, type);
-      res.status(200).send('Recipe is created successfuly');
+      res.status(200).json({"message":"Recipe is created successfuly"});
     } catch (error) {
       throw error;
     }
@@ -33,7 +33,7 @@ class RecipeController {
     try {
       const { id } = req.params;
       await RecipeModel.deleteRecipes(id);
-      res.status(200).send('Recipe is deleted successfuly');
+      res.status(200).json({"message":"Recipe is deleted successfuly"});
     } catch (error) {
       throw error;
     }
@@ -44,7 +44,7 @@ class RecipeController {
       const { id } = req.params;
       const { title, ingredient, type } = req.body;
       await RecipeModel.updateRecipes(id, title, ingredient, type);
-      res.status(200).send('Recipe is updated successfuly');
+      res.status(200).json({"message":"Recipe is updated successfuly"});
     } catch (error) {
       throw error;
     }

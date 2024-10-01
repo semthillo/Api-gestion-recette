@@ -13,7 +13,9 @@ const addRequestValidatore = [
     .withMessage("Title can't be number!")
     .bail()
     .isLength({ min: 5, max: 100 })
-    .withMessage('The title must be at least 5 characters and at most 100 characters long.')
+    .withMessage(
+      'The title must be at least 5 characters and at most 100 characters long.'
+    )
     .bail()
     .custom(async (value) => {
       const result = await RecipeModel.checkRecipes(value);
@@ -28,7 +30,9 @@ const addRequestValidatore = [
     .withMessage('Ingredient is required!')
     .bail()
     .isLength({ min: 10, max: 500 })
-    .withMessage('The ingredients must be at least 10 characters and at most 500 characters long.')
+    .withMessage(
+      'The ingredients must be at least 10 characters and at most 500 characters long.'
+    )
     .bail()
     .isString()
     .withMessage("Ingredient can't be number!")
@@ -87,7 +91,9 @@ const updateRequestValidatore = [
     .withMessage("Title can't be number!")
     .bail()
     .isLength({ min: 5, max: 100 })
-    .withMessage('The title must be at least 5 characters and at most 100 characters long.')
+    .withMessage(
+      'The title must be at least 5 characters and at most 100 characters long.'
+    )
     .bail()
     .custom(async (value) => {
       const result = await RecipeModel.checkRecipes(value);
@@ -102,7 +108,9 @@ const updateRequestValidatore = [
     .withMessage('Ingredient is required!')
     .bail()
     .isLength({ min: 10, max: 500 })
-    .withMessage('The ingredients must be at least 10 characters and at most 500 characters long.')
+    .withMessage(
+      'The ingredients must be at least 10 characters and at most 500 characters long.'
+    )
     .bail()
     .isString()
     .withMessage("Ingredient can't be number!")

@@ -4,7 +4,7 @@ import {
   deleteRequestValidatore,
   updateRequestValidatore,
 } from '../middlewares/validatorRecipe.js';
-import RecipeController from '../controllers/RecipeController.js';                                                                                                 
+import RecipeController from '../controllers/RecipeController.js';
 
 const router = express.Router();
 

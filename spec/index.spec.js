@@ -9,7 +9,6 @@ describe('Recipe tests', () => {
       recipe.title,
       recipe.ingredient,
       recipe.type
-      
     );
     recipeId = result.insertId;
     const recipeCreated = await RecipeModel.getRecipeById(recipeId);
@@ -19,12 +18,11 @@ describe('Recipe tests', () => {
 
   it('can not be create', async () => {
     try {
-      const recipe = { title: null,  ingredient: 'farime', type: 'dessert' };
+      const recipe = { title: null, ingredient: 'farime', type: 'dessert' };
       const result = await RecipeModel.createRecipes(
         recipe.title,
         recipe.ingredient,
         recipe.type
-        
       );
       recipeId = result.insertId;
       const recipeCreated = await RecipeModel.getRecipeById(recipeId);
@@ -58,15 +56,13 @@ describe('Recipe tests', () => {
       id: 10,
       title: 'crenpe',
       ingredient: 'farime',
-      type: 'dessert'
-      
+      type: 'dessert',
     };
     await RecipeModel.updateRecipes(
       recipe.id,
       recipe.title,
-      recipe.ingredient, 
-      recipe.type,
-      
+      recipe.ingredient,
+      recipe.type
     );
     // expect(updateRecipe).not.toBe(0);
 

@@ -33,6 +33,7 @@ Suivez ces étapes pour configurer le projet sur votre machine locale :
 4. **Configurer la base de données**
 
 - Assurez-vous que Mysql est en cours d'exécution sur votre machine locale.
+- Vous pouvez importer la base de donnée en utilisant le fchier `db.sql`
 - Mettez les paramètres de connexion dans `db.js`.
 - Créez un fichier .env avec la configuration de votre base de données :
   ```js

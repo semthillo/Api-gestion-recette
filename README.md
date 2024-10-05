@@ -40,9 +40,7 @@ Suivez ces étapes pour configurer le projet sur votre machine locale :
   DB_PASSWORD = yourpassword;
   DB_NAME = gestion_recettes;
   ```
-- Mettez les paramètres de connexion dans  le fchier  db.js
-
-
+- Mettez les paramètres de connexion dans le fchier db.js
 
 ## Utilisation
 
@@ -169,6 +167,5 @@ docker-compose up
 ```
 
 ## Author
-
 
 - **GitHub** : [Sem Thillo](https://github.com/semthillo)

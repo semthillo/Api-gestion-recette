@@ -15,13 +15,13 @@ Suivez ces étapes pour configurer le projet sur votre machine locale :
 1. **Clonez le repository :**
 
    ```bash
-       https://github.com/Ousmanly/gestion_recette_api_backend.git
+       https://github.com/semthillo/Api-gestion-recette.git
    ```
 
 2. **Accédez au dossier du projet :**
 
    ```bash
-      cd gestion_recette_api
+      cd Api-gestion-recette
    ```
 
 3. **Installez les dépendances :**
@@ -33,15 +33,16 @@ Suivez ces étapes pour configurer le projet sur votre machine locale :
 4. **Configurer la base de données**
 
 - Assurez-vous que Mysql est en cours d'exécution sur votre machine locale.
-- Vous pouvez importer la base de donnée en utilisant le fchier `db.sql`
-- Mettez les paramètres de connexion dans `db.js`.
-- Créez un fichier .env avec la configuration de votre base de données :
+- Copier et renommer le fichier .env.exemple en .env et ajoutez la configuration de votre base de données :
   ```js
   DB_HOST = localhost;
   DB_USER = root;
   DB_PASSWORD = yourpassword;
-  DB_NAME = recipes_db;
+  DB_NAME = gestion_recettes;
   ```
+- Mettez les paramètres de connexion dans  le fchier  db.js
+
+
 
 ## Utilisation
 
